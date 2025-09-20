@@ -222,7 +222,7 @@ def yolo_detection(img, model):
     """Use YOLO for initial detection with fallback"""
     try:
         if model is not None:
-            results = model.predict(source=img, imgsz=640, conf=0.3, verbose=False)
+            results = model.predict(source=img, imgsz=640, conf=0.5, verbose=False)
             
             if len(results) == 0 or len(results[0].boxes) == 0:
                 return fallback_detection(img)
